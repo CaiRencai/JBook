@@ -16,10 +16,10 @@ import rx.Observable;
 
 public class BookApi {
 
-    private BookApi INSTANCE = null;
+    private static BookApi INSTANCE = null;
     private final BookService mService;
 
-    private BookApi getInstance(OkHttpClient client) {
+    public static BookApi getInstance(OkHttpClient client) {
         if (INSTANCE == null) {
             INSTANCE = new BookApi(client);
         }
