@@ -47,4 +47,6 @@ public class RecommendPresenter extends RxBasePresenter<RecommendBookContract.Re
             }
         });
     }
+
+
 }
