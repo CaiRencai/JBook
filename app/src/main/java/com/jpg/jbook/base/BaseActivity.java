@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.jpg.jbook.BookApplication;
+import com.jpg.jbook.R;
 import com.jpg.jbook.component.AppComponent;
 
 import butterknife.ButterKnife;
@@ -28,8 +29,6 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     private Toolbar mToolbar;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +37,20 @@ public abstract class BaseActivity extends AppCompatActivity{
         ButterKnife.bind(this);
         setupAppComponent(BookApplication.getInstance().getAppComponent());
 
+        mToolbar = ButterKnife.findById(this, R.id.common_toolbar);
+        if (mToolbar != null) {
+            initToolBar();
+            setSupportActionBar(mToolbar);
+        }
+        initData();
+        configViews();
     }
+
+    protected abstract void configViews();
+
+    protected abstract void initData();
+
+    protected abstract void initToolBar();
 
     protected abstract void setupAppComponent(AppComponent appComponent);
 
