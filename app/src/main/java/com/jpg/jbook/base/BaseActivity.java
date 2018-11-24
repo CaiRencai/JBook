@@ -44,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         }
         initData();
         configViews();
+        //分支修改
     }
 
     protected abstract void configViews();
