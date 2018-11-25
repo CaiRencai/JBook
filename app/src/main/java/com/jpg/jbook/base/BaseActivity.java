@@ -44,7 +44,8 @@ public abstract class BaseActivity extends AppCompatActivity{
         }
         initData();
         configViews();
-        //分支修改
+        //分支修改--》commit--》push 到 remote TBranch --》 checkout master--》merge--》push 结果：两个都有更新到
+        //这一次分支修改--》commit--》checkout master--》merge--》push 看master有没有更新。
     }
 
     protected abstract void configViews();
